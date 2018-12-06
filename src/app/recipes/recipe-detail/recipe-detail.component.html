@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Details</h1>
+    <img [src]="recipe.imgpath"
+    width="900%" alt=""
+    class="img-thumbnail">
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+  <h1>{{recipe.name}}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <!-- <ul class="list-group">
+      <li class="list-group-item">To Shopping List</li>
+      <li class="list-group-item">To Recipe List</li>
+      <li class="list-group-item">Delete Recipe</li>
+    </ul> -->
+
+      <!-- <li class="dropdown" appDropdown>
+        <a class="btn btn-primary dropdown-toggle" href="#" id="recDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Manage
+        </a>
+        <div class="dropdown-menu " style="possition:absulte" aria-labelledby="recDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li> -->
+      <div
+      class="btn-group"
+      appDropdown>
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle"
+        (click)="manage = ! manage">
+        Manage Recipe <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" [ngClass]="{'show' : manage}">
+        <a class="dropdown-item" href="#">To Shopping List</a>
+        <a class="dropdown-item" href="#">to Recipe</a>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    {{recipe.description}}
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    Ingredients
+  </div>
+</div>
